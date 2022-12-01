@@ -24,13 +24,15 @@
     background-image: url(../img/type0.svg);
 }
 
+.bomb {
+    background-image: url(../img/mine.svg);
+}
+
+
 .red-bomb {
     background-image: url(../img/mine_red.svg);
 }
 
-.bomb {
-    background-image: url(../img/mine.svg);
-}
 
 
 

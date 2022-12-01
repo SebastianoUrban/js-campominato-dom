@@ -71,7 +71,11 @@ function fillGrid(gridElem, scoreElem, bombList) {
                 gameOver = true;
                 alert('HAI VINTO!!!!');
             } else if (gameOver) {
-                alert('GAME OVER!');
+                const cellList = gridElem.querySelectorAll('div.square');
+                for(let j = 0; j<16; j++){
+                    cellList[bombList[j]].classList.add('bomb');
+                }
+
             }
             //console.log(score);
         });
