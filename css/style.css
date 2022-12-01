@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.flag {
+    background-image: url(../img/flag.svg);
+}
+
 .clicked {
     background-image: url(../img/type0.svg);
 }
@@ -28,9 +32,7 @@
     background-image: url(../img/mine.svg);
 }
 
-.flag {
-    background-image: url(../img/flag.svg);
-}
+
 
 .square p {
 

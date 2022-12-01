@@ -70,14 +70,19 @@ function fillGrid(gridElem, scoreElem, bombList) {
             if (!gameOver && (score == 84) ) {
                 gameOver = true;
                 alert('HAI VINTO!!!!');
+            } else if (gameOver) {
+                alert('GAME OVER!');
             }
             //console.log(score);
         });
 
-        // divElem.addEventListener('contextmenu', function (e) {
-        //     e.preventDefault();
-        //     divElem.classList.toggle('flag');
-        // });
+        divElem.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            if (!clicked) {
+                divElem.classList.toggle('flag');
+            }  
+            
+        });
         gridElem.appendChild(divElem);
     }
 };
@@ -99,6 +104,6 @@ function genBombList (nBomb, min, max) {
             outputBombList.push(randomNumber);
         }
     }
-    console.log(outputBombList);
+    console.log(outputBombList.sort((a, b) => a - b));
     return outputBombList;
 };
