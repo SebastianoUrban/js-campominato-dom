@@ -61,7 +61,9 @@ function fillGrid(gridElem, scoreElem, bombList) {
                     divElem.classList.add('red-bomb');
                     gameOver = true;
                 } else {
-                    divElem.classList.add('clicked');
+                    const nearBomb = nearCell(i, bombList);
+                    const nearBombString = classByNearBomb(nearBomb);
+                    divElem.classList.add(nearBombString);
                     score++;
                     scoreElem.innerHTML = score;
                 }
@@ -111,3 +113,70 @@ function genBombList (nBomb, min, max) {
     console.log(outputBombList.sort((a, b) => a - b));
     return outputBombList;
 };
+
+
+
+function nearCell(index, bombList) {
+    const sideTop = [0,1,2,3,4,5,6,7,8,9];
+    const sideRight = [9,19,29,39,49,59,69,79,89,99];
+    const sideBot = [90,91,92,93,94,95,96,97,98,99];
+    const sideLeft = [0,10,20,30,40,50,60,70,80,90];
+
+    const nearPosition = [];
+
+    if( !(sideTop.includes(index)) ){
+        nearPosition.push(index-10);
+        if( !(sideRight.includes(index)) ){
+            nearPosition.push(index-10+1);
+        }
+    }
+    if( !(sideRight.includes(index)) ){
+        nearPosition.push(index+1);
+        if( !(sideBot.includes(index)) ){
+            nearPosition.push(index+10+1);
+        }
+    }
+    if( !(sideBot.includes(index)) ){
+        nearPosition.push(index+10);
+        if( !(sideLeft.includes(index)) ){
+            nearPosition.push(index+10-1);
+        }
+    }
+    if( !(sideLeft.includes(index)) ){
+        nearPosition.push(index-1);
+        if( !(sideTop.includes(index)) ){
+            nearPosition.push(index-10-1);
+        }
+    }
+
+    const numNearBomb = nearPosition.filter(value => bombList.includes(value));
+
+    return numNearBomb.length;
+
+}
+
+
+
+function classByNearBomb(numNearBomb){
+    outputString = '';
+    if (numNearBomb == 1){
+        outputString = 'num1';
+    } else if (numNearBomb == 2){
+        outputString = 'num2';
+    }else if (numNearBomb == 3){
+        outputString = 'num3';
+    }else if (numNearBomb == 4){
+        outputString = 'num4';
+    }else if (numNearBomb == 5){
+        outputString = 'num5';
+    }else if (numNearBomb == 6){
+        outputString = 'num6';
+    }else if (numNearBomb == 7){
+        outputString = 'num7';
+    }else if (numNearBomb == 8){
+        outputString = 'num8';
+    } else {
+        outputString = 'clicked';
+    }
+    return outputString;
+}

@@ -24,6 +24,38 @@
     background-image: url(../img/type0.svg);
 }
 
+.num1 {
+    background-image: url(../img/type1.svg);
+}
+
+.num2 {
+    background-image: url(../img/type2.svg);
+}
+
+.num3 {
+    background-image: url(../img/type3.svg);
+}
+
+.num4 {
+    background-image: url(../img/type4.svg);
+}
+
+.num5 {
+    background-image: url(../img/type5.svg);
+}
+
+.num6 {
+    background-image: url(../img/type6.svg);
+}
+
+.num7 {
+    background-image: url(../img/type7.svg);
+}
+
+.num8 {
+    background-image: url(../img/type8.svg);
+}
+
 .bomb {
     background-image: url(../img/mine.svg);
 }
