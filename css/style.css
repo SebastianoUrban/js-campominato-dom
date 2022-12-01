@@ -20,6 +20,18 @@
     background-image: url(../img/type0.svg);
 }
 
+.red-bomb {
+    background-image: url(../img/mine_red.svg);
+}
+
+.bomb {
+    background-image: url(../img/mine.svg);
+}
+
+.flag {
+    background-image: url(../img/flag.svg);
+}
+
 .square p {
 
 }
