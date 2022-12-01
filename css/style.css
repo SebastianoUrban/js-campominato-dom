@@ -1,0 +1,25 @@
+#grid {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+}
+
+
+.square {
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/closed.svg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clicked {
+    background-image: url(../img/type0.svg);
+}
+
+.square p {
+
+}
